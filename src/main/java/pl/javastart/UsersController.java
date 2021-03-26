@@ -38,7 +38,7 @@ public class UsersController {
             return "redirect:/err.html";
         } else {
             usersRepository.add(new User(firstName, lastName, age));
-            return  "redirect:/success.html";
+            return "redirect:/success.html";
         }
     }
 
