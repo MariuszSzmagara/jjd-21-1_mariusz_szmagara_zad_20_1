@@ -11,7 +11,7 @@ import java.util.List;
 @Controller
 public class UsersController {
 
-    private UsersRepository usersRepository;
+    private final UsersRepository usersRepository;
 
     public UsersController(UsersRepository usersRepository) {
         this.usersRepository = usersRepository;
@@ -34,13 +34,15 @@ public class UsersController {
     public String addUser(@RequestParam(name = "imie", required = false) String firstName,
                           @RequestParam(name = "nazwisko") String lastName,
                           @RequestParam(name = "wiek") Integer age) {
-        String redirect;
-        if (firstName == null) {
-            redirect = "redirect:/err.html";
+        if (!isNameCorrect(firstName)) {
+            return "redirect:/err.html";
         } else {
             usersRepository.add(new User(firstName, lastName, age));
-            redirect = "redirect:/success.html";
+            return  "redirect:/success.html";
         }
-        return redirect;
+    }
+
+    private boolean isNameCorrect(String name) {
+        return name != null && !name.equals("");
     }
 }
