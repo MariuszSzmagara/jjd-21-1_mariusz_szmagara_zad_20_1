@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body class="mx-5">
+<form action="/add" method="post">
+    <div class="row">
+        <div class="col">
+            <label for="inputFirstName">Imię</label>
+            <input type="text" name="imie" class="form-control" id="inputFirstName" placeholder="firstName">
+        </div>
+        <div class="col">
+            <label for="inputLastName">Nazwisko</label>
+            <input type="text" name="nazwisko" class="form-control" id="inputLastName" placeholder="lastName">
+        </div>
+        <div class="col">
+            <label for="inputAge">Wiek</label>
+            <input type="number" name="wiek" class="form-control" id="inputAge" placeholder="age">
+        </div>
+        <div class="col">
+            <label for="inputSubmit">Dodaj</label>
+            <div>
+                <button type="submit" class="btn btn-primary mb-2" id="inputSubmit">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
